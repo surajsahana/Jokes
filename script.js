@@ -28,7 +28,7 @@ async function getJokes(){
     let joke = '';
     const apiUrl = 'https://v2.jokeapi.dev/joke/Any';
     try{
-        const response = await fetch(apiUrl);
+        const response = await fetch(cleanJokeUrl);
         const data = await response.json();
         if(data.setup){
             joke = `${data.setup} ... ${data.delivery}`;
